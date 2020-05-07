@@ -102,8 +102,8 @@ typedef NS_ENUM(NSInteger, NVHGzipFileErrorType)
     
 	// Convert source path into something a C library can handle
     NSString *revisedSourcePath = [sourcePath stringByRemovingPercentEncoding];
-    print("revisedSourcePath",revisedSourcePath);
-    print("cStringUsingEncoding:NSUTF8StringEncoding",cStringUsingEncoding:NSUTF8StringEncoding);
+    NSLog(@"revisedSourcePath>>>>[%@]",revisedSourcePath);
+    NSLog(@"cStringUsingEncoding:NSUTF8StringEncoding[%@]",[revisedSourcePath cStringUsingEncoding:NSUTF8StringEncoding]);
 	const char *sourceCString = [revisedSourcePath cStringUsingEncoding:NSUTF8StringEncoding];
     
 	gzFile *sourceGzFile = gzopen(sourceCString, "rb");

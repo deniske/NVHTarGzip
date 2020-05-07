@@ -117,8 +117,7 @@
 - (void)unGzipFileAtPath:(NSString *)sourcePath
                   toPath:(NSString *)destinationPath
               completion:(void(^)(NSError *))completion {
-    NSString *revisedSourcePath = [sourcePath stringByRemovingPercentEncoding];
-    NVHGzipFile* gzipFile = [[NVHGzipFile alloc] initWithPath:revisedSourcePath];
+    NVHGzipFile* gzipFile = [[NVHGzipFile alloc] initWithPath:sourcePath];
     [gzipFile inflateToPath:destinationPath completion:completion];
 }
 
